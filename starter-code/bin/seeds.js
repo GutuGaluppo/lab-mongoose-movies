@@ -22,7 +22,8 @@ const celebritys = [
 ]
 
 
-celebritys.create = (celebritys)
-    .then(celebritys =>
-        console.log(`Created ${celebritys.length} celebritys`)
-    )
+Celebritys.create(celebrities, (err) => {
+    if (err) { throw(err) }
+    console.log(`Created ${celebritys.length} celebritys`)
+    mongoose.connection.close()
+})
